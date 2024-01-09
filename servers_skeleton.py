@@ -16,7 +16,7 @@ class Product:
     def __eq__(self, other):
         return self.name == other.name and self.price == other.price
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash((self.name, self.price))
 
 
@@ -31,7 +31,8 @@ class TooManyProductsFoundError:
 #   (3) możliwość odwołania się do metody `get_entries(self, n_letters)` zwracającą listę produktów spełniających kryterium wyszukiwania
 
 class ListServer:
-    pass
+    # def __init__(self, products: list[Product]) -> None:
+
 
 
 class MapServer:
