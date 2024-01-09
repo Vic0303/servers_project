@@ -1,7 +1,7 @@
 Członkowie grupy: 
 Kamil Nowobilski, 
 Wiktor Matykiewicz, 
-Artur Olszówka, 
+Artur Olszówka
 
 Kierownik grupy:
 Wiktor Matykiewicz
