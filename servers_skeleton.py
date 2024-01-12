@@ -80,7 +80,7 @@ class Client:
     def __init__(self, server: Server) -> None:
         self.server = server
 
-    def calculate_total_price(self, n_letters: Optional[int]) -> Optional[float]:
+    def get_total_price(self, n_letters: Optional[int]) -> Optional[float]:
         try:
             if n_letters is None:
                 products = self.server.get_entries()
