@@ -41,7 +41,7 @@ class Server(ABC):
     def get_entries(self, n_letters: int = 1) -> List[Product]:
         matches_list = []
         pattern = f'^[a-zA-Z]{{{n_letters}}}\\d{{2,3}}$'
-        for product in self.get_products_list():
+        for product in self._get_products_list():
             if re.fullmatch(pattern, product.name):
                 matches_list.append(product)
         if len(matches_list) > self.n_max_returned_entries:
@@ -49,7 +49,7 @@ class Server(ABC):
         return matches_list
 
     @abstractmethod
-    def get_products_list(self, n_letters: int = 1) -> List[Product]:
+    def _get_products_list(self, n_letters: int = 1) -> List[Product]:
         raise NotImplementedError
 
 
@@ -58,7 +58,7 @@ class ListServer(Server):
         super().__init__(*args, **kwargs)
         self.__products: List[Product] = products
 
-    def get_products_list(self, n_letters: int = 1) -> List[Product]:
+    def _get_products_list(self, n_letters: int = 1) -> List[Product]:
         return self.__products
 
 
@@ -70,7 +70,7 @@ class MapServer(Server):
         for product in products:
             self.__products[product.name] = product
 
-    def get_products_list(self, n_letters: int = 1) -> List[Product]:
+    def _get_products_list(self, n_letters: int = 1) -> List[Product]:
         v_list = list(self.__products.values())
         return v_list
 
