@@ -1,4 +1,5 @@
 Servers_project
+Projekt zaliczeniowy na przedmiot ZPO na kierunku AiR AGH 2024
 ===========
 -----
 Członkowie grupy:
